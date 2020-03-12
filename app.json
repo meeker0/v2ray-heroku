@@ -1,24 +1,27 @@
-  {
-    "port": 33444,
-    "listen": "2a02:0180:0006:0001:0000:0000:0000:0ab6",
-    "protocol": "vmess",
-    "settings": {
-      "clients": [
-        {
-          "id": "ad806487-2d26-4636-98b6-ab85cc8521f7",
-          "alterId": 64
-        }
-      ]
-    },
-    "streamSettings": {
-      "network": "mkcp",
-      "kcpSettings": {
-        "uplinkCapacity": 5,
-        "downlinkCapacity": 100,
-        "congestion": true,
-        "header": {
-          "type": "wechat-video"
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cs.neuu.workers.dev",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad806487-2d26-4636-98b6-ab85cc8521f7",
+                "security": "auto",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "wsSettings": {
+          "path": "/"
         }
       }
     }
-  }
+  ]
+}
